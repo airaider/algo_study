@@ -1,7 +1,7 @@
 bfs/dfs
 11724   dfs 기초, 인접행렬 구하기, count 위치 선정 
 2667    bfs 기초, 섬 돌면서 count, priority queue
-7576    
+7576    bfs 기초, 채우는데 걸리는 시간, queue.add, queue.point
 
 dp
 1463 

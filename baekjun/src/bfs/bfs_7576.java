@@ -5,9 +5,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
+
 
 public class bfs_7576 {
 	static int stoi(String s) { return Integer.parseInt(s);}
@@ -33,56 +33,46 @@ public class bfs_7576 {
 	    for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
 				if(map[i][j]==1) {
-					((LinkedList<Point>) q) .push(new Point(i,j));
+					q.add(new Point(i,j));
 				}	
 			}
 			
 		}
-	    show();
 	    bfs();
-	    show();
-	    check();
-	    System.out.println(cnt);
-	    
+	    while(!q.isEmpty()) {
+	    	System.out.println(q.poll());
+	    }
+	    System.out.println(check());
 	}
 	
-	private static void show() {
-		for(int i=0;i<N;i++) {
-			for(int j=0;j<M;j++) {
-				System.out.print("  "+map[i][j]);
-			}
-			System.out.println();
-		}
-		
-	}
 
-
-	private static void check() {
+	private static int check() {
+		int max=-1;
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
 				if(map[i][j]==0) {
-					cnt=-1;
+					return -1;
 				}
+				if(map[i][j]>max)max=map[i][j];
 			}
 		}
+		return max-1;
 		
 	}
 
 	private static void bfs() {
 		while(!q.isEmpty()) {
-			int x=q.peek().x;
-			int y=q.peek().y;
-			q.poll();
+			Point p = q.remove();
+			int x=p.x;
+			int y=p.y;
 			for(int i=0;i<4;i++) {
 				int nr = x+dirR[i];
 				int nc = y+dirC[i];
 				
 				if(0<=nr && nr<N && 0<=nc && nc<M ) {
 					if(map[nr][nc]==0) {
-						System.out.print((x+1)+""+(y+1)+" ");
 						map[nr][nc]=map[x][y]+1;
-						((LinkedList<Point>) q) .push(new Point(nr,nc));
-						System.out.println((nr+1)+""+(nc+1));
+						q.add(new Point(nr,nc));
 					}
 					
 				}
