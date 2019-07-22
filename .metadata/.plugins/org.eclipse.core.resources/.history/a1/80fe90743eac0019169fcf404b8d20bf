@@ -1,0 +1,14 @@
+package simul;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.util.Scanner;
+
+public class simul_13000 {
+
+	public static void main(String[] args) {
+		System.setIn(new FileInputStream("13000.txt"));
+		Scanner sc = new Scanner(System.in);
+	}
+
+}

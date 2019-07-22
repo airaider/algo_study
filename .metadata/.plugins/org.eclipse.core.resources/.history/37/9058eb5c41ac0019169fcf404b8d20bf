@@ -1,0 +1,36 @@
+package simul;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class simul_13000 {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		System.setIn(new FileInputStream("16000.txt"));
+		Scanner sc = new Scanner(System.in);
+		int x=sc.nextInt();
+		int y=sc.nextInt();
+		sc.nextLine();
+		char[][] map = new char[x][y];
+		for (int i = 0; i < x; i++) {
+			String st = sc.nextLine();
+			for (int j = 0; j < y; j++) {
+				map[i][j]=st.charAt(j);
+			}
+		}
+		show(map);
+	}
+
+	private static void show(char[][] map) {
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map[i].length; j++) {
+				System.out.print(map[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+}

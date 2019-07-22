@@ -1,0 +1,68 @@
+package simul;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class simul_1051 {
+	static int x,y;
+	static int dir[][] = {
+			{0,1},
+			{1,0},
+			{1,1}
+	};
+	static int stoi(String s){
+		return Integer.parseInt(s);
+	}
+	static int[][] map;
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("1051.txt"));
+		Scanner sc = new Scanner(System.in);
+		x=sc.nextInt();
+		y=sc.nextInt();
+		sc.nextLine();	
+		map = new int[x][y];
+		for (int i = 0; i < x; i++) {
+			String st = sc.nextLine();
+			for (int j = 0; j < y; j++) {
+				map[i][j] = st.charAt(j) - '0';
+			}
+		}
+		show();
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				check(i,j);
+			}
+		}
+		
+	}
+	private static void check(int a, int b) {
+		int max=(x>y)?x:y;
+		for(int j=1;j<max;j++) {
+			for(int i=0;i<3;i++) {
+				int dx=a+dir[i][0];
+				int dy=b+dir[i][1];
+				if(dx<0 || dx>=x || dy<0 || dy>=y) return;
+				if(map[dx][dy]!=map[a][b]) return;
+			}
+			System.out.println(a+","+b);
+		}
+		
+		
+		
+		
+	}
+	private static void show() {
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				System.out.print(map[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+
+}

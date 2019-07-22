@@ -1,0 +1,123 @@
+package simul;
+
+import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.Array;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class simul_5427 {
+	static int stoi(String s) {
+		return Integer.parseInt(s);
+	}
+	static int[][] dir ={{-1,0},{1,0},{0,-1},{0,1}};
+	static int N,M;
+	static char[][] map;
+	static Queue<Point> human;
+	static Queue<Point> fire;
+	static Queue<Integer> flag;
+	static int f;
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("5427.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int T = stoi(st.nextToken());
+		for(int t=1;t<=T;t++) {
+			int f=-1;
+			st = new StringTokenizer(br.readLine());
+			M=stoi(st.nextToken());
+			N=stoi(st.nextToken());
+			human = new LinkedList<Point>();
+			fire = new LinkedList<Point>();
+			flag = new LinkedList<Integer>();
+			map = new char [N][M];
+			for (int i = 0; i < N; i++) {
+				String a = br.readLine();
+				for (int j = 0; j < M; j++) {
+					map[i][j]=a.charAt(j);
+					if(a.charAt(j)=='@') {
+						human.add(new Point(i,j));
+						flag.add(1);
+					}
+					
+				}
+			}
+			for (int i = 0; i < N; i++) {
+				for (int j = 0; j < M; j++) {
+					if(map[i][j]=='*') {
+						human.add(new Point(i,j));
+						flag.add(0);
+					}
+				}
+			}
+			
+			
+			bfs();
+			if(f==1) {
+				System.out.println("ESCAPE");
+			}
+			else {
+				System.out.println("IMPOSSIBLE");
+			}
+			
+			
+		}
+		
+	}
+	
+	
+	
+	private static void bfs() {
+		while(!human.isEmpty()) {
+			int cnt=1;
+			Point h = human.remove();
+			int k = flag.remove();
+			int x=h.x;
+			int y=h.y;
+			for(int i=0;i<4;i++) {
+				int nr = x+dir[i][0];
+				int nc = y+dir[i][1];
+				
+				if(0<=nr && nr<N && 0<=nc && nc<M ) {
+					if(map[nr][nc]=='.' && k==1) {
+						map[nr][nc]='@';
+						human.add(new Point(nr,nc));
+						flag.add(1);
+					}
+					if(k==0 && map[nr][nc]!='#' && map[nr][nc]!='*') {
+						map[nr][nc]='*';
+						human.add(new Point(nr,nc));
+						flag.add(0);
+					}
+					
+				}
+				else if(k==1) {
+					f=1;
+					System.out.println(cnt);
+					System.out.println("escape");
+					return;
+				}
+			}
+			cnt++;
+		}
+		
+	}
+
+
+
+	private static void show() {
+		for(int i=0;i<N;i++) {
+			for(int j=0;j<M;j++) {
+				System.out.print(map[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println();
+		
+	}
+
+}
