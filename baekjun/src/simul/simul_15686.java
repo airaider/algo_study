@@ -6,16 +6,16 @@ import java.util.Scanner;
 
 public class simul_15686 {
 	static int N;
-	static int ch;
+	static int cmax;
 	static int[][] map;
 	static int[][] chicken;
 	static int c=0;
 	static int[] visit;
+	static int street = Integer.MAX_VALUE;
 	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("15686.txt"));
 		Scanner sc = new Scanner(System.in);
 		N=sc.nextInt();
-		ch=sc.nextInt();
+		cmax=sc.nextInt();
 		map = new int[N][N];
 		
 		for (int i = 0; i < N; i++) {
@@ -36,47 +36,47 @@ public class simul_15686 {
 				}
 			}
 		}
-		for (int i = 0; i < c; i++) {
-			System.out.println(chicken[i][0]+","+chicken[i][1]);
-		}
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < N; j++) {
-				if(map[i][j]==1) {
-					//System.out.println(cal(i,j));
-				}
-			}
-		}
-		System.out.println("c:"+c);
-		System.out.println("ch:"+ch);
-		System.out.println(combi(c,ch));
+		combi(0,0);
+		System.out.println(street);
 	}
 	
-	public static int combi(int n, int r) { 
-		if(n == r || r == 0) return 1; 
-		else return combi(n - 1, r - 1) + combi(n - 1, r); 
+	public static void combi(int i, int v) { 
+		if(i==c || v==cmax) {
+			int sum=0;
+			for (int a = 0; a < N; a++) {
+				for (int b = 0; b < N; b++) {
+					if(map[a][b]==1) {
+						sum+=cal(a,b);
+					}
+				}
+			}
+			if(sum<street) street=sum;
+			return;
 		}
+		visit[i]=1;
+		if(i+1==c && v+1==cmax-1) return;
+		combi(i+1,v+1);
+		visit[i]=0;
+		if(i+1==c) return;
+		combi(i+1,v);
+	}
 
 	
 	
 	private static int cal(int x, int y) {
 		int min=Integer.MAX_VALUE;
 		for(int i=0;i<c;i++) {
-			int di=Math.abs(chicken[i][0]-x)+Math.abs(chicken[i][1]-y);
-			if(di<min) {
-				min=di;
+			if(visit[i]==1) {
+				int di=Math.abs(chicken[i][0]-x)+Math.abs(chicken[i][1]-y);
+				if(di<min) {
+					min=di;
+				}
 			}
+			
 		}
 		return min;
 		
 	}
-	private static void show() {
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < N; j++) {
-				System.out.print(map[i][j]);
-			}
-			System.out.println();
-		}
-		
-	}
+	
 	
 }
