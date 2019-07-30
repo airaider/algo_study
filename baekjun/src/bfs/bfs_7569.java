@@ -49,7 +49,6 @@ public class bfs_7569 {
 				}
 			}
 		}
-		
 		bfs();
 		check();
 		

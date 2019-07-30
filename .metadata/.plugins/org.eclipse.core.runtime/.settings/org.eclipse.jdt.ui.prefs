@@ -9,7 +9,7 @@ org.eclipse.jdt.internal.ui.navigator.librariesnode=true
 org.eclipse.jdt.ui.formatterprofiles.version=14
 org.eclipse.jdt.ui.text.code_templates_migrated=true
 org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
-org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="java" deleted\="false" description\="" enabled\="true" name\="scanner">Scanner sc \= new Scanner(System.in);</template><template autoinsert\="true" context\="java" deleted\="false" description\="" enabled\="true" name\="bound">if(0 &lt;\= nx &amp;&amp; nx &lt; N &amp;&amp; 0 &lt;\= ny &amp;&amp; ny &lt; M) {&\#13;\r\n\t\t\t\tif(map[nx][ny] \=\= 0) {&\#13;\r\n\t\t\t\t\t&\#13;\r\n\t\t\t\t}&\#13;\r\n\t\t\t}</template><template autoinsert\="true" context\="java" deleted\="false" description\="" enabled\="true" name\="forij">for (int i \= 0; i &lt; N; i++) {&\#13;\r\n\t\t\tfor (int j \= 0; j &lt; N; j++) {&\#13;\r\n\t\t\t\t&\#13;\r\n\t\t\t}&\#13;\r\n\t\t}</template></templates>
 org.eclipse.jdt.ui.text.templates_migrated=true
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true
