@@ -34,7 +34,7 @@ public class Main_1697 {
 			}
 			if(2*N<=100000 && visit[2*N]==0) {
 				q.add(2*N);
-				visit[2*N]=visit[N]+1;
+				visit[2*N]=visit[N];
 			}
 		}
 		System.out.println(visit[K]-1);
