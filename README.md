@@ -1,4 +1,4 @@
-# Baekjoon AlGorithm Study
+# Baekjoon Algorithm Study
 
 > bfs/dfs
 
