@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_14889 {
+public class Main_14889_스타트와링크 {
 	static int N;
 	static int [][] map;
 	static int [] start;

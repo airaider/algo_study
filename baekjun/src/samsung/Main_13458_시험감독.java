@@ -2,7 +2,7 @@ package samsung;
 
 import java.util.Scanner;
 
-public class Main_13458 {
+public class Main_13458_시험감독 {
 	static int N;
 	static int B;
 	static int C;

@@ -3,7 +3,7 @@ package samsung;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main_14888 {
+public class Main_14888_연산자끼워놓기 {
 	static int[] num;
 	static int[] op;
 	static int N;

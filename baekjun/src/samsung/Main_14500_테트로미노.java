@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_14500 {
+public class Main_14500_테트로미노 {
 	static int N,M;
 	static int ans=0;
 	static int dir[][] = {

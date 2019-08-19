@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_15683 {
+public class Main_15683_감시 {
 	static int N,M;
 	static int map[][];
 	static boolean visit[][];
