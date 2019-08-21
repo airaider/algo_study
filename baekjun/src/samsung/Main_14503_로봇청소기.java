@@ -1,11 +1,9 @@
-package samsung;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_14503_호봇청소기 {
+public class Main_14503_�κ�û�ұ� {
 	static int map[][];
 	static int dir[][]= {
 			{-1,0},
@@ -14,8 +12,7 @@ public class Main_14503_호봇청소기 {
 			{0,-1}
 	};
 	static int N, M;
-	static boolean visit[][];
-	static int r,c,d;
+	static int cnt;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -26,32 +23,36 @@ public class Main_14503_호봇청소기 {
 		int c = Integer.parseInt(st.nextToken());
 		int d = Integer.parseInt(st.nextToken());
 		map = new int [N][M];
-		visit = new boolean[N][M];
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < M; j++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		clean();
-
+		clean(r,c,d);
+		System.out.println(cnt);
 	}
-	private static void clean() {
-		int x = r;
-		int y = c;
-		while(true) {
-			
-			visit[x][y]=true;
-			d = d==0?3:d-1;
+	private static void clean(int x, int y, int d) {
+		if(map[x][y]==1) return;
+		if(map[x][y]==0) {
+			map[x][y]=2;
+			cnt+=1;
+		}
+		for (int i = 0; i < 4; i++) {
+			d=d==0?3:d-1;
 			int nx = x+dir[d][0];
 			int ny = y+dir[d][1];
-			if(nx>=0 && nx<N && ny>=0 && ny<M && !visit[nx][ny]) {
-				x=nx;
-				y=ny;
-				continue;
+			if(map[nx][ny]==0) {
+				clean(nx,ny,d);
+				return;
 			}
-			
 		}
+		int nx = x-dir[d][0];
+		int ny = y-dir[d][1];
+		clean(nx,ny,d);
+		
+		
+		
 	}
 
 }
