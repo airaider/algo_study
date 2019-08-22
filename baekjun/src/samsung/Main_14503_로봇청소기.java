@@ -1,9 +1,11 @@
+package samsung;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_14503_�κ�û�ұ� {
+public class Main_14503_로봇청소기 {
 	static int map[][];
 	static int dir[][]= {
 			{-1,0},

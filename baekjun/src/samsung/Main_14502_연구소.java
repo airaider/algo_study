@@ -1,3 +1,5 @@
+package samsung;
+
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_14502_¿¬±¸¼Ò {
+public class Main_14502_ì—°êµ¬ì†Œ{
 	static int N,M;
 	static int map[][];
 	static int ans=0;
@@ -60,19 +62,19 @@ public class Main_14502_¿¬±¸¼Ò {
 			Point p = q.remove();
 			int x=p.x;
 			int y=p.y;
-			if(0 <= x-1 && test[x-1][y] == 0) { // »ó
+			if(0 <= x-1 && test[x-1][y] == 0) { // ìƒ
 				test[x-1][y]=2;
 				q.add(new Point(x-1,y));
 			}
-			if(x+1 < N && test[x+1][y] == 0) { // »ó
+			if(x+1 < N && test[x+1][y] == 0) { // í•˜
 				test[x+1][y]=2;
 				q.add(new Point(x+1,y));
 			}
-			if(0 <= y-1 && test[x][y-1] == 0) { // »ó
+			if(0 <= y-1 && test[x][y-1] == 0) { // ì¢Œ
 				test[x][y-1]=2;
 				q.add(new Point(x,y-1));
 			}
-			if(y+1 < M && test[x][y+1] == 0) { // »ó
+			if(y+1 < M && test[x][y+1] == 0) { // ìš°
 				test[x][y+1]=2;
 				q.add(new Point(x,y+1));
 			}
