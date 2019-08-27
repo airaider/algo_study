@@ -1,11 +1,13 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1563840441000
+codemix.dont.show.upsell.until=1568505128346
 configurationInstallLocation=/C\:/SSAFY/eclipse/
 eclipse.preferences.version=1
 elearning.dont.show.until=1567469579399
 iconcolormode=primary
 includeThemingInOomph=false
-last.download.attempt.time=1566432778249
-lastConfiguration=1566432772286
-newinstall=true
+last.download.attempt.time=1566863528383
+lastConfiguration=1566797811939
+newinstall=false
+showWelcomeDialog=false
 workbench.theme=Dark Gray
