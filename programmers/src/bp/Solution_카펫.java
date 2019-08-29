@@ -2,7 +2,7 @@ package bp;
 
 import java.util.Arrays;
 
-public class Solution_42842 {
+public class Solution_카펫 {
 	class Solution {
 		public int[] solution(int brown, int red) {
 			int[] answer = {};
