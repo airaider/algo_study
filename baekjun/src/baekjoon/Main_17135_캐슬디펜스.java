@@ -41,7 +41,18 @@ public class Main_17135_캐슬디펜스 {
 		
 	}
 	private static void defense() {
-		
+		for(int i=N-1;i>=0;i--) {
+			for (int loc : num) {
+				if(map[i][loc]==1) {
+					ans++;
+					map[i][loc]=0;
+				}else {
+					
+				}
+			}
+			
+			
+		}
 	}
 
 }
