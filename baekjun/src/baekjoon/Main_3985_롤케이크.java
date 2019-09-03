@@ -13,7 +13,6 @@ public class Main_3985_롤케이크 {
 		int N = Integer.parseInt(br.readLine());
 		int predict=-1;
 		int fa = 0,ra=0;
-		int actual;
 		int[] cake = new int[L+1];
 		int count[] = new int[N+1];
 		for (int i = 1; i <= N; i++) {
