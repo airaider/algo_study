@@ -45,6 +45,8 @@ public class Main_2634_사냥꾼 {
 		
 		for (int i = 0; i < N; i++) {
 			Point p = animal[i];
+			int x = p.x;
+				
 			for (int j = 0; j < M; j++) {
 				if(Math.abs((long)loc[j]-(long)p.x)+(long)p.y<=L) {
 					ans++;
