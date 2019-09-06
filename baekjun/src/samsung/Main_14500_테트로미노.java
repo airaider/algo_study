@@ -98,9 +98,5 @@ public class Main_14500_테트로미노 {
 		}
 		visit[x][y]=false;
 	}
-	private static void bfs() {
-		
-	}
-	
 
 }
