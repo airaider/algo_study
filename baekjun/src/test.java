@@ -1,24 +1,27 @@
 import java.util.Arrays;
 
 public class test {
-	static int M;
-	private static int N;
-	static int[] m;
+	static boolean[] visit;
+	static int N;
 	public static void main(String[] args) {
-		int x = 3;
-		int y = 0;
-		int mul =1;
-		for(int i = x+y; i>(x>y?x:y);i--) {
-			mul*=i;
-		}
-		int s = 1;
+		N=6;
+		visit = new boolean[N];
+		sub(0,0);
 		
-		for (int i = 1; i <= (x<y?x:y); i++) {
-			s*=i;
+	}
+	private static void sub(int index, int count) {
+		if(count==3) {
+			for (int i = 0; i < 6; i++) {
+				if(visit[i]) System.out.print(i);
+			}
+			System.out.println();
+			return;
 		}
-		System.out.println(mul);
-		System.out.println(s);
-		System.out.println(mul/s);
+		
+		visit[index]=true;
+		sub(index+1, count+1);
+		visit[index]=false;
+		sub(index+1, count+1);
 	}
 	
 }
