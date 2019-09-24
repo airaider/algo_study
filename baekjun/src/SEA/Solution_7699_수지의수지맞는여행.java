@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
  
-public class Solution {
+public class Solution_7699_수지의수지맞는여행 {
     private static char[][] map;
     private static int[] visited;
     private static int max;

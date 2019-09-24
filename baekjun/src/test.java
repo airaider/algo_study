@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class test {
 	static boolean[] visit;
@@ -10,18 +10,31 @@ public class test {
 		
 	}
 	private static void sub(int index, int count) {
-		if(count==3) {
-			for (int i = 0; i < 6; i++) {
-				if(visit[i]) System.out.print(i);
+		ArrayList<Integer> test = new ArrayList<>();
+		test.add(1);
+		test.add(2);
+		test.add(3);
+		test.add(4);
+		test.add(5);
+		test.add(6);
+		test.add(7);
+		test.add(8);
+		test.add(9);
+		test.add(10);
+		
+		for (int i = 0; i < test.size(); i++) {
+			System.out.println(test.get(i));
+			if(test.get(i)%2==0) {
+				test.remove(i);
+				i--;
 			}
-			System.out.println();
-			return;
+		}
+		for (int i = 0; i < test.size(); i++) {
+			System.out.println(test.get(i));
 		}
 		
-		visit[index]=true;
-		sub(index+1, count+1);
-		visit[index]=false;
-		sub(index+1, count+1);
+		
+		
 	}
 	
 }
