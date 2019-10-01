@@ -39,24 +39,21 @@ public class Main_2247_도서관 {
 			if(in[1]<temp[0]) {
 				out[0]=in[1];
 				out[1]=temp[0];
-				
-				if(in[1]-in[0]>inTime) {
-					inTime=in[1]-in[0]>inTime?in[1]-in[0]:inTime;
-					outTime=out[1]-out[0]>outTime?out[1]-out[0]:outTime;
-					
-				}
-				
-				
+				inTime=in[1]-in[0]>inTime?in[1]-in[0]:inTime;
+				outTime=out[1]-out[0]>outTime?out[1]-out[0]:outTime;
 				in=student[i];
 				
 			}
-			else {
-				
-				
-				
+			else if(temp[0]<=in[1]){
+				if(temp[1]>in[1]) {
+					in[1]=temp[1];
+				}
 			}
+			
+			
 		}
-		
+		inTime=in[1]-in[0]>inTime?in[1]-in[0]:inTime;
+		System.out.println(inTime+" "+outTime);
 		
 		
 	}

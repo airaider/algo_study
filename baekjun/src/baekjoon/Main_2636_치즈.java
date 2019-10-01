@@ -13,7 +13,7 @@ public class Main_2636_치즈 {
 	static int N,M;
 	static int map[][];
 	static int visit[][];
-	static int dir[][]= {
+	static int dir[][]= { 
 			{1,0},
 			{-1,0},
 			{0,1},
