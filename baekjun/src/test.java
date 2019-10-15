@@ -1,12 +1,20 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class test {
 	static boolean[] visit;
 	static int N;
 	public static void main(String[] args) {
-		N=6;
-		visit = new boolean[N];
-		sub(0,0);
+		String line= "127.158.0.1";
+		int a;
+		int b;
+		int c;
+		int d;
+		StringTokenizer st = new StringTokenizer(line,".");
+		while(st.hasMoreTokens()) {
+			System.out.println(st.nextToken());
+		}
 		
 	}
 	private static void sub(int index, int count) {

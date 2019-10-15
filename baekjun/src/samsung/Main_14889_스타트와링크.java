@@ -76,28 +76,4 @@ public class Main_14889_스타트와링크 {
 		
 		
 	}
-	private static void combi(int[] comArr, int n, int r, int index, int target) {
-        if(r==0){
-            for(int i : comArr){
-                System.out.print(i+" ");
-            }
-            System.out.println();
-            calcu(comArr);
-            return;
-        }	
-        if(target == n)return;
-         
-        comArr[index] = target;
-        combi(comArr, n, r-1, index+1, target+1);//뽑는경우
-        combi(comArr, n, r, index, target+1);//안뽑는경우
-         
-    }
-	private static void calcu(int[] comArr) {
-		 for(int i : comArr){
-             
-         }
-		
-	}
-	
-
 }
