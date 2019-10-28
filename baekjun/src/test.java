@@ -9,9 +9,6 @@ public class test {
 		System.out.println(Character.toString((char)68));
 		char a = 'A';
 		char b = 'B';
-		System.out.println(a<=b);
-		System.out.println();
-		System.out.println(Integer.valueOf(10));
 		String line= "127.158.0.1";
 		int c;
 		int d;
