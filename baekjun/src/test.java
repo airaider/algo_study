@@ -6,9 +6,13 @@ public class test {
 	static boolean[] visit;
 	static int N;
 	public static void main(String[] args) {
+		System.out.println(Character.toString((char)68));
+		char a = 'A';
+		char b = 'B';
+		System.out.println(a<=b);
+		System.out.println();
+		System.out.println(Integer.valueOf(10));
 		String line= "127.158.0.1";
-		int a;
-		int b;
 		int c;
 		int d;
 		StringTokenizer st = new StringTokenizer(line,".");
